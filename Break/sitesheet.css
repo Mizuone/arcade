@@ -10,42 +10,23 @@
 }
 /*=========================================*/
 html {
-width:100%;
-height:100%;
+    width:100%;
+    height:100%;
 }
 
 body {
-
-}
-
-h1 {
-
-}
-
-h2 {
-
-
-}
-
-p {
-
-
-}
-
-ul {
-
-
-}
-
-ol {
-
-
+    background: #000000; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #000000 , #BA4A00); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #000000 , #BA4A00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: rgba(255,255,255,0.7);
 }
 #myCanvas {
     background:rgba(250, 68, 13, 0.1);
 	display: block;
 	margin: 0 auto;
     margin-top: 1em;
+    box-shadow: 0 0 5px black;
+    border-radius: 10px;
 }
 #canvas_Level2 {
 	background:rgba(250, 68, 13, 0.1);
@@ -57,15 +38,15 @@ ol {
     
 }
 a {
-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 nav a:link {
-  color: white;
+    color: white;
  }
 nav a:visited {
-  color: white;
+    color: white;
 }
 nav a:hover {
-  color: #3399FF;
+    color: #3399FF;
 }
 

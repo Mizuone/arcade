@@ -3,7 +3,7 @@ function start() {
     var canvas = document.getElementById("myCanvas"), ctx = canvas.getContext("2d"), 
 rectangleOne = {x: 0, y: 250, width: 15, height: 100, speedx: 1, speedy: -1}, 
 rectangleTwo = {x: 785, y: 250, width: 15, height: 100, speedx: 2, speedy: -1}, 
-ballObject = {x: 200, y: 250, radius: 10, speedx: 4, speedy: -2}, playerScore = 0, computerScore = 0,
+ballObject = {x: 200, y: 250, radius: 10, speedx: 6, speedy: 3}, playerScore = 0, computerScore = 0,
         theWinner = " ", delay = 2000, optionScreen = false;
     
     function handleMouseClick(evt) {
@@ -61,10 +61,14 @@ ballObject = {x: 200, y: 250, radius: 10, speedx: 4, speedy: -2}, playerScore = 
         ctx.fill();
     };
     function computerMovement() {
-        if(rectangleTwo.y < ballObject.y - rectangleTwo.height / 2) {
-            rectangleTwo.y += 2;
-        } else {
-            rectangleTwo.y -= 2;
+        if(rectangleTwo.y < ballObject.y - rectangleTwo.height / 2 && ballObject.speedx < 0) {
+            rectangleTwo.y += 0;
+        }
+        if(rectangleTwo.y > ballObject.y - rectangleTwo.height / 2 && ballObject.speedx > 0) {
+            rectangleTwo.y -= 5;
+        }
+        if(rectangleTwo.y < ballObject.y - rectangleTwo.height / 2 && ballObject.speedx > 0) {
+            rectangleTwo.y += 5;
         }
     };
     //resets ball position when called

@@ -4,7 +4,7 @@ function start() {
         secondBall = {x: 250, y: 250, radius: 10, speedx: 2, speedy: -2}, //second ball variables
         paddle = {x: canvas.width - paddleWidth / 2, y: canvas.height, width: 75, height: 20},
         audiobackground = new Audio('sound/Stellardrone - Billions And Billions.mp3'), bounceSound = new Audio('sound/bounce-effect.wav'),
-        score = 0, lives = 3, delayDouble = 2000, delay = 4000, upPressed = false, downPressed = false, rightPressed = false, leftPressed = false, 
+        score = 0, lives = 10, delayDouble = 2000, delay = 4000, upPressed = false, downPressed = false, rightPressed = false, leftPressed = false, 
         spacePressed = false, cancelAnimation; 
 
     var paddleHeight = 20; /* Paddle Object Height */
@@ -69,7 +69,7 @@ function start() {
             ctx.beginPath();
             //x and y variables gets updated on everyframe, ballradius is size of object
             ctx.arc(firstBall.x, firstBall.y, firstBall.radius, 0, Math.PI*2);
-            ctx.fillStyle = "rgba(0,0,0,0.5)";
+            ctx.fillStyle = "rgba(255,255,255,0.5)";
             ctx.fill();
             ctx.closePath();
         }
@@ -218,8 +218,9 @@ function start() {
         function triggerBranches() {
             if(score == 70) {  
 				drawVictory();
+                lives = 10;
                 setTimeout(function(){
-                    window.location = "Level2.html";
+                    location.reload();
 				}, delay); 
             }
         }
